@@ -7,13 +7,13 @@
 //
 
 #import "HMCommonFunctions.h"
-#import "HMValidateFuncs.h"
+#import "LZValidateFuncs.h"
 
 @implementation HMCommonFunctions
 
 + (NSString *)getSecrectStringWithPhoneNumber:(NSString *)phoneNum
 {
-    if (![HMValidateFuncs isValidMobileNumber:phoneNum]) {
+    if (![LZValidateFuncs isValidMobileNumber:phoneNum]) {
         return @"无效手机号";
     }
     NSMutableString *newStr = [NSMutableString stringWithString:phoneNum];
@@ -24,7 +24,7 @@
 
 + (NSString *)stringMobileFormat:(NSString *)mobile
 {
-    if (![HMValidateFuncs isValidMobileNumber:mobile]) {
+    if (![LZValidateFuncs isValidMobileNumber:mobile]) {
         return @"无效手机号";
     }
     NSMutableString* value = [[NSMutableString alloc] initWithString:mobile];
@@ -35,7 +35,7 @@
 
 + (NSString *)getSecrectStringWithAccountNo:(NSString *)accountNo
 {
-    if (![HMValidateFuncs isValidIDCardNumber:accountNo]) {
+    if (![LZValidateFuncs isValidIDCardNumber:accountNo]) {
         return @"无效银行卡号";
     }
     NSMutableString *newStr = [NSMutableString stringWithString:accountNo];

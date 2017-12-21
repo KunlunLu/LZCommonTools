@@ -1,15 +1,31 @@
 //
-//  UIButton+Category.m
-//  haitao
+//  UIButton+EX.m
+//  LZCommonToolsDemo
 //
-//  Created by Yuen-iMac on 16/5/4.
-//  Copyright © 2016年 上海市配夸网络科技有限公司. All rights reserved.
+//  Created by lkl on 2017/7/4.
+//  Copyright © 2017年 lkl. All rights reserved.
 //
 
-#import "UIButton+Category.h"
+#import "UIButton+EX.h"
 #import <objc/runtime.h>
-@implementation UIButton (EnlargeTouchArea)
+static const void *UIButtonBlockKey = &UIButtonBlockKey;
 
+@implementation UIButton (EX)
+
+//点击按钮之后的动作
+-(void)lz_addActionHandler:(TouchedBlock)touchHandler{
+    objc_setAssociatedObject(self, UIButtonBlockKey, touchHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self addTarget:self action:@selector(actionTouched:) forControlEvents:UIControlEventTouchUpInside];
+}
+-(void)actionTouched:(UIButton *)btn{
+    TouchedBlock block = objc_getAssociatedObject(self, UIButtonBlockKey);
+    if (block) {
+        block(btn.tag);
+    }
+}
+
+
+//扩大 UIButton 的点击范围
 static char topNameKey;
 static char rightNameKey;
 static char bottomNameKey;
@@ -49,5 +65,4 @@ static char leftNameKey;
     }
     return CGRectContainsPoint(rect, point) ? self : nil;
 }
-
 @end

@@ -10,13 +10,30 @@
 
 @interface HMCommonFunctions : NSObject
 
-//电话号码中间4位****显示
+/**
+ 电话号码中间4位****显示
+
+ @param phoneNum 电话号码
+ @return 字符串
+ */
 + (NSString *)getSecrectStringWithPhoneNumber:(NSString *)phoneNum;
 
-//转为电话格式
+
+/**
+ 转为电话格式
+
+ @param mobile 电话号码
+ @return 字符串
+ */
 + (NSString *)stringMobileFormat:(NSString *)mobile;
 
-//银行卡号中间8位显示
+
+/**
+ 银行卡号中间8位显示
+
+ @param accountNo 银行卡号
+ @return 银行卡号显示
+ */
 + (NSString *)getSecrectStringWithAccountNo:(NSString *)accountNo;
 
 @end

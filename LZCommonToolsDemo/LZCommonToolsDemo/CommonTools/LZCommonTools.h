@@ -9,24 +9,28 @@
 #ifndef LZCommonTools_h
 #define LZCommonTools_h
 
-/*
- Category
- */
+#pragma mark ============= AppConfig =============
+#import "LZAppMacro.h"
+#import "LZDeviceInfoMacro.h"
+
+#pragma mark ============= Category ==============
+#import "UIButton+Countdown.h"
+#import "UIButton+EX.h"
+#import "UIView+EX.h"
+#import "UIImage+EX.h"
+#import "UIView+Frame.h"
+
 #import "NSString+SizeUtil.h"
-#import "UIBarButtonItem+BackEXtension.h"
-#import "UIButton+Category.h"
-#import "UIButton+countDown.h"
+#import "UIBarButtonItem+Back.h"
 #import "UILabel+LineOffset.h"
 #import "UIColor+Hex.h"
-#import "UIImage+EX.h"
 #import "UILabel+LineOffset.h"
-#import "UIView+BorderLine.h"
 #import "UIViewController+ShowAlert.h"
-#import "UIView+EX.h"
 
-/*
- Common     项目中共用的
- */
-#import "HMValidateFuncs.h"
+
+#pragma mark =============  Common ==============
+#import "LZPhotoPickerManager.h"
+#import "NSAttributedString+EX.h"
+#import "LZValidateFuncs.h"
 
 #endif /* LZCommonTools_h */

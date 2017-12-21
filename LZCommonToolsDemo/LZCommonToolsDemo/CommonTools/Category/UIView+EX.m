@@ -7,89 +7,40 @@
 //
 
 #import "UIView+EX.h"
+#import "UIColor+Hex.h"
 
 @implementation UIView (EX)
 
-+ (NSString *)at_identifier {
++ (NSString *)lz_identifier {
     return NSStringFromClass([self class]);
 }
 
-
-- (CGSize)size
+- (void)showTopLine
 {
-    return self.bounds.size;
+    UIImageView *ivTopLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 0.5)];
+    [self addSubview:ivTopLine];
+    [ivTopLine setBackgroundColor:[UIColor colorWithHex:0xE2E2E2]];
 }
 
-- (float)left
+- (void)showBottomLine
 {
-    return self.frame.origin.x;
+    UIImageView *ivBottomLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 0.5, CGRectGetWidth(self.frame), 0.5)];
+    [self addSubview:ivBottomLine];
+    [ivBottomLine setBackgroundColor:[UIColor colorWithHex:0xE2E2E2]];
 }
 
-- (void)setLeft:(float)left
+- (void) showLeftLine
 {
-    CGRect rtFrame = self.frame;
-    rtFrame.origin.x = left;
-    [self setFrame:rtFrame];
+    UIImageView *ivLeftLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 0.5, CGRectGetHeight(self.frame))];
+    [self addSubview:ivLeftLine];
+    [ivLeftLine setBackgroundColor:[UIColor colorWithHex:0xE2E2E2]];
 }
 
-- (float)top
+- (void) showRightLine
 {
-    return self.frame.origin.y;
-}
-
-- (void)setTop:(float)top
-{
-    CGRect rtFrame = self.frame;
-    rtFrame.origin.y = top;
-    [self setFrame:rtFrame];
-}
-
-- (float)right
-{
-    return self.left + self.width;
-}
-
-- (void)setRight:(float)right
-{
-    CGRect rtFrame = self.frame;
-    rtFrame.origin.x = right - self.width;
-    [self setFrame:rtFrame];
-}
-
-- (float)bottom
-{
-    return self.top + self.height;
-}
-
-- (void)setBottom:(float)bottom
-{
-    CGRect rtFrame = self.frame;
-    rtFrame.origin.y = bottom - self.height;
-    [self setFrame:rtFrame];
-}
-
-- (float)width
-{
-    return self.size.width;
-}
-
-- (void)setWidth:(float)width
-{
-    CGRect rtFrame = self.frame;
-    rtFrame.size.width = width;
-    [self setFrame:rtFrame];
-}
-
-- (float)height
-{
-    return self.size.height;
-}
-
-- (void)setHeight:(float)height
-{
-    CGRect rtFrame = self.frame;
-    rtFrame.size.height = height;
-    [self setFrame:rtFrame];
+    UIImageView *ivRightLine = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.frame) - 0.5, 0, 0.5, CGRectGetHeight(self.frame))];
+    [self addSubview:ivRightLine];
+    [ivRightLine setBackgroundColor:[UIColor colorWithHex:0xE2E2E2]];
 }
 
 @end

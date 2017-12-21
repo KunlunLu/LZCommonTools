@@ -1,14 +1,14 @@
 //
-//  UIBarButtonItem+BackEXtension.m
-//  LZCommonUtilKits
+//  UIBarButtonItem+Back.m
+//  LZCommonToolsDemo
 //
-//  Created by lkl on 2017/4/25.
+//  Created by lkl on 2017/8/2.
 //  Copyright © 2017年 lkl. All rights reserved.
 //
 
-#import "UIBarButtonItem+BackEXtension.h"
+#import "UIBarButtonItem+Back.h"
 
-@implementation UIBarButtonItem (BackEXtension)
+@implementation UIBarButtonItem (Back)
 
 + (UIBarButtonItem *)itemWithImageNamed:(NSString *)imageNamed targe:(id)targe action:(SEL)action
 {

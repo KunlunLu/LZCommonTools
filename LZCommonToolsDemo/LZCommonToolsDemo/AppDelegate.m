@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LZTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    LZTabBarViewController *adViewController = [[LZTabBarViewController alloc] initWithNibName:nil bundle:nil];
+    [self.window setRootViewController:adViewController];
+    
     return YES;
 }
 

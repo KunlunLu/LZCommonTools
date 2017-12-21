@@ -11,16 +11,11 @@
 @interface UIView (EX)
 
 // 标识，类名string
-+ (NSString *)at_identifier;
++ (NSString *)lz_identifier;
 
-@property (nonatomic, readonly) CGSize size;
-
-@property (nonatomic, assign) float left;
-@property (nonatomic, assign) float right;
-@property (nonatomic, assign) float top;
-@property (nonatomic, assign) float bottom;
-
-@property (nonatomic, assign) float width;
-@property (nonatomic, assign) float height;
+- (void)showTopLine;
+- (void)showBottomLine;
+- (void)showLeftLine;
+- (void)showRightLine;
 
 @end
